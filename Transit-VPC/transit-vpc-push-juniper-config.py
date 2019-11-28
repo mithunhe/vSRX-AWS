@@ -226,7 +226,7 @@ def create_jnpr_config(bucket_name, bucket_key, s3_url, bgp_asn, subnet, ssh):
     log.info("Processing %s/%s", bucket_name, bucket_key)
 
     #Determine the next hop ip address for the ge0/0/0 interface
-    vsrx_subnet = (ipaddress.ip_network(unicode(subnet)))
+    vsrx_subnet = (ipaddress.ip_network(str(subnet)))
     next_hop = vsrx_subnet.network_address + 1
 
     #Download the VPN configuration XML document
