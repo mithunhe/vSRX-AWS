@@ -19,7 +19,7 @@
 	"CodeLocation" : "juniper-security/transit-vpc/transit-vpc-poller.py",
 	"Name" : "vgw-poller",
         "Description": "Transit VPC: Poller function responsible for identifying specifically tagged VGWs and creating VPN connections to transit VPC.",
-        "Runtime": "python2.7",
+        "Runtime": "python3.7",
         "Timeout": "120",
         "MemorySize": "128"
       },
@@ -89,7 +89,7 @@
       	  "S3Bucket": { "Fn::Join": ["", ["solutions-", {"Ref" : "AWS::Region"}]] },
       	  "S3Key": "library/solution-helper/v2/solution-helper.zip"
       	},
-      	"Runtime": "python2.7",
+      	"Runtime": "python3.7",
       	"Timeout": "60"
      }
    },
