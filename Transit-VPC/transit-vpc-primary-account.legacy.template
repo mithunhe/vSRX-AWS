@@ -142,7 +142,7 @@
     "CodeRegion" : "us-east-1",
     "Name" : "juniper-configurator",
         "Description": "Transit VPC: This function is invoked when a generic VPN configuration is placed in an S3 bucket - it converts the generic information into Junos OS specific commands and pushes the config to transit VPC routers.",
-        "Runtime": "python2.7",
+        "Runtime": "python3.7",
         "Timeout": "300",
         "MemorySize": "128"
       },
@@ -151,7 +151,7 @@
     "CodeRegion" : "us-east-1",
     "Name" : "vgw-poller",
         "Description": "Transit VPC: Poller function responsible for identifying specifically tagged VGWs and creating VPN connections to transit VPC.",
-        "Runtime": "python2.7",
+        "Runtime": "python3.7",
         "Timeout": "120",
         "MemorySize": "128"
       },
@@ -1177,7 +1177,7 @@
           "S3Bucket": { "Fn::Join": ["", ["solutions-", {"Ref" : "AWS::Region"}]] },
           "S3Key": "library/solution-helper/v3/solution-helper.zip"
         },
-        "Runtime": "python2.7",
+        "Runtime": "python3.7",
         "Timeout": "60"
      }
    },
