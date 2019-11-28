@@ -16,7 +16,7 @@ from botocore.client import Config
 from xml.dom import minidom
 import ast
 import logging
-import datetime, sys, json, urllib2, urllib, re
+import datetime, sys, json, urllib.request, urllib.error, urllib.parse, urllib.request, urllib.parse, urllib.error, re
 log = logging.getLogger()
 log.setLevel(logging.INFO)
 
@@ -87,8 +87,8 @@ def sendAnonymousData(config, vgwTags, region_id, vpn_connections):
     data=json.dumps(postDict)
     log.info(data)
     headers = {'content-type': 'application/json'}
-    req = urllib2.Request(url, data, headers)
-    rsp = urllib2.urlopen(req)
+    req = urllib.request.Request(url, data, headers)
+    rsp = urllib.request.urlopen(req)
     rspcode = rsp.getcode()
     content = rsp.read()
     log.debug("Response from APIGateway: %s, %s", rspcode, content)
